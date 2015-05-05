@@ -9,7 +9,7 @@ search_term = "Nepal+Earthquake"
 
 search_results = ["id","description"]
 
-with open('search_results_csv.csv', 'w') as f:
+with open('search_results.csv', 'w') as f:
 
 	writer = csv.writer(f)
 
@@ -87,7 +87,7 @@ with open('search_results_csv.csv', 'w') as f:
 					#json_return = requests.get('http://tasks.hotosm.org/project/' + split[2] + '/tasks.json')
 					json_return = requests.get('http://tasks.hotosm.org/project/' + split[2] + '.json')  
 					data = json_return.json()
-					with open('project_' + split[2] +'.json', 'w') as f:
+					with open('project_' + split[2] +'.geojson', 'w') as f:
 						json.dump(data, f)
 						
 					#consider doing a merge of geoJSONs with Shapely (python geos library)
@@ -95,16 +95,4 @@ with open('search_results_csv.csv', 'w') as f:
 					#http://bl.ocks.org/mbostock/5416405
 					#http://gis.ibbeck.de/ginfo/apps/OLExamples/OL27/examples/intersection%20of%20features.asp
 
-		
 
-
-
-
-
-
-                    
- 
-                    
-
-
-        
